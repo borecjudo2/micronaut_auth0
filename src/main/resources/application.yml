@@ -3,13 +3,35 @@ micronaut:
     name: micronaut_auth0
   security:
     authentication: idtoken
-    oauth2:
-      clients:
-        auth0:
-          client-id: '${OAUTH_CLIENT_ID:xxx}'
-          client-secret: '${OAUTH_CLIENT_SECRET:xxx}'
-          openid:
-            issuer: '${OAUTH_CLIENT_DOMAIN:xxx}'
     endpoints:
       logout:
         get-allowed: true
+    oauth2:
+      clients:
+        auth0:
+          openid:
+            issuer: '${auth0.domain}'
+          client-id: '${auth0.client-id}'
+          client-secret: '${auth0.client-secret}'
+
+#      openid:
+#        claims-validation:
+#          audience: true
+#    token:
+#      jwt:
+#        claims-validators:
+#          audience: '${auth0.audience}'
+
+
+auth0:
+  audience: '${OAUTH_CLIENT_AUDIENCE:https://quickstarts/api}'
+  domain: '${OAUTH_CLIENT_DOMAIN:dev-u39euvpx.eu.auth0.com}'
+  client-id: '${OAUTH_CLIENT_ID:E5yuSKbqgogeJ6t3qCX5DEoYEsFPuL61}'
+  client-secret: '${OAUTH_CLIENT_SECRET:6P7VRdzcujZqbdt13WI3MmXp4lajsOfRdcuY0fsDeb5ZexGKMUEcZf5fQgjDjcge}'
+  token:
+    params:
+      roles:
+        name:
+          "https://menu-api.example.com/roles"
+
+

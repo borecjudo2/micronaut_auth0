@@ -31,7 +31,19 @@
 
     <dependencies>
 
-<!--        micronaut security-->
+        <dependency>
+            <groupId>io.micronaut</groupId>
+            <artifactId>micronaut-aop</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/io.projectreactor/reactor-core -->
+        <dependency>
+            <groupId>io.projectreactor</groupId>
+            <artifactId>reactor-core</artifactId>
+            <version>3.4.9</version>
+        </dependency>
+
+        <!--        micronaut security-->
         <dependency>
             <groupId>io.micronaut.security</groupId>
             <artifactId>micronaut-security-oauth2</artifactId>
@@ -101,6 +113,15 @@
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
             <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.auth0</groupId>
+            <artifactId>mvc-auth-commons</artifactId>
+            <version>1.8.0</version>
         </dependency>
     </dependencies>
 
